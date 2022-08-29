@@ -1,19 +1,8 @@
-package com.example.javalearning.entity;
+package com.example.javalearning.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "users")
-public class UserEntity extends BaseEntity {
-    @Column
+public class UserDto {
     private String username;
-
-    @Column
     private String password;
-
-    @Column
     private Long roleId;
 
     public String getUsername() {

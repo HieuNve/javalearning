@@ -14,7 +14,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
     @Bean
     public Docket postsApi(){
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
+        return new Docket(DocumentationType.OAS_30).apiInfo(apiInfo())
+                .select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.javalearning.controller"))
                 .build();
     }
