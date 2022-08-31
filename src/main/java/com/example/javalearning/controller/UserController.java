@@ -18,19 +18,19 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
     @GetMapping("/api/v1/accounts")
-    public ArrayList<UserEntity> getUser(){
-        userRepository.findAll().forEach(System.out::println);
-        return new ArrayList<>();
+    public UserService getUserService() {
+        return (UserService) userService.getUsers();
     }
 
     @GetMapping("/api/v1/account")
-    public UserEntity getUserInformation(@RequestParam Long id){
+    public UserEntity getUserInformation(@RequestParam Long id) {
         return userRepository.findAllById(id);
     }
 
     @PostMapping("/api/v1/account")
-    public UserDto AddUser(@RequestBody UserDto userDto){
+    public UserDto AddUser(@RequestBody UserDto userDto) {
         return userService.addUser(userDto);
     }
 }

@@ -7,6 +7,8 @@ import com.example.javalearning.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService implements iUserService {
     @Autowired
@@ -21,5 +23,10 @@ public class UserService implements iUserService {
         UserEntity userEntity = newConveter.toUserEntity(userDto);
         userEntity = userRepository.save(userEntity);
         return newConveter.toUserDto(userEntity);
+    }
+
+    @Override
+    public List<UserEntity> getUsers() {
+        return userRepository.findAll();
     }
 }
