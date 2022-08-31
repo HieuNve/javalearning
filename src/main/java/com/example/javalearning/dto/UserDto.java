@@ -1,6 +1,7 @@
 package com.example.javalearning.dto;
 
-public class UserDto {
+public class UserDto extends BaseDto {
+    private Long id;
     private String username;
     private String password;
     private Long roleId;
@@ -15,6 +16,14 @@ public class UserDto {
 
     public String getPassword() {
         return password;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setPassword(String password) {
